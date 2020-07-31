@@ -4,11 +4,18 @@ let db = require("../models");
 
 // const dbConfig = process.env.MONGODB_URI;
 
-mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  // useUnifiedTopology: true 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true,
+  useFindAndModify: false
 });
+
+
+// mongoose.connect("mongodb://localhost/workout", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+  // useUnifiedTopology: true 
+// });
 
 let workoutSeed = [
   {

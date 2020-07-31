@@ -5,8 +5,7 @@ const path = require('path');
 const mongoose = require("mongoose");
 
 // Database Connection Request
-// require('dotenv').config();
-// const connectDB = require("./config/connectDB.js");
+const connectDB = require("./config/connectDB.js");
 
 //Bring in models
 const db = require("./models");
@@ -113,15 +112,15 @@ app.post("/api/workouts", (req,res) => {
 
 /******************************* Connect to db  ****************************/
 // connectDB()
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true, useUnifiedTopology: true });
 
-db.Workout.create({ type: "cardio"} )
-  .then(dbUser => {
-    console.log(dbUser);
-  })
-  .catch(({ message }) => {
-    console.log(message);
-  });
+
+// db.Workout.create({ type: "cardio"} )
+//   .then(dbUser => {
+//     console.log(dbUser);
+//   })
+//   .catch(({ message }) => {
+//     console.log(message);
+//   });
 
 
 
